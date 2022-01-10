@@ -1,7 +1,7 @@
 import express from 'express';
 import router from './routes/v1/index';
 
-const app = express();
+const app: express.Express = express();
 
 // JSONオブジェクトの受信設定
 app.use(express.json())
