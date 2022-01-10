@@ -1,8 +1,9 @@
 # 方針
+Google Cloud Runにデプロイ
 
 # セットアップ
 ## git clone
-`# git clone git@github.com:ikmnjrd/このリポジトリ.git`
+`# git clone git@github.com:ikmnjrd/<this-repository-name>.git`
 
 `# rm -rf .git/`
 
@@ -24,15 +25,13 @@
 `gcloud projects list`
 
 ## プロジェクトの新規作成
-`# gcloud projects create プロジェクトID --name <project-name>`
+`# gcloud projects create <your-project-id> --name <your-project-name>`
 
 ## プロジェクトをセット
-`# gcloud config set project <project-name>`
+`# gcloud config set project <your-project-name>`
 
 ## Dockerfile を含むディレクトリから次のコマンドを実行し、Cloud Build を使用してコンテナ イメージをビルドします
 `# gcloud builds submit --tag asia.gcr.io/<you-project-id>/<docker-image>`
 
 ## Cloud Run へのデプロイ
-`# gcloud run deploy helloworld --image asia.gcr.io/PROJECT-ID/helloworld --region asia-northeast1 --platform managed --allow-unauthenticated`
-`# gcloud run deploy hello-express --image asia.gcr.io/express-test-444/hello-express --region asia-northeast1 --platform managed --allow-unauthenticated`
-
+`# gcloud run deploy <service-name> --image asia.gcr.io/<your-project-id>/<docker-image> --region asia-northeast1 --platform managed --allow-unauthenticated`
